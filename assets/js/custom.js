@@ -171,7 +171,7 @@
 					$('.header-area .nav').slideUp(200);	
 				}				
 				$('html,body').animate({
-					scrollTop: (target.offset().top) - 80
+					scrollTop: (target?.offset().top) - 80
 				}, 700);
 				return false;
 			}
@@ -195,7 +195,7 @@
 	        menu = target;
 	       	var target = $(this.hash);
 	        $('html, body').stop().animate({
-	            scrollTop: (target.offset().top) - 79
+	            scrollTop: (target?.offset().top) - 79
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
@@ -208,7 +208,7 @@
 	    $('.nav a').each(function () {
 	        var currLink = $(this);
 	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+	        if (refElement?.position()?.top <= scrollPos && refElement?.position()?.top + refElement.height() > scrollPos) {
 	            $('.nav ul li a').removeClass("active");
 	            currLink.addClass("active");
 	        }
@@ -282,7 +282,7 @@
             $w = jQuery(window),
             viewTop = $w.scrollTop(),
             viewBottom = viewTop + $w.height(),
-            _top = $t.offset().top,
+            _top = $t?.offset()?.top,
             _bottom = _top + $t.height(),
             compareTop = partial === true ? _bottom : _top,
             compareBottom = partial === true ? _top : _bottom;

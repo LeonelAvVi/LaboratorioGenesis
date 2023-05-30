@@ -15,11 +15,14 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
+
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+    <script src="./requests/laboratorio.js"></script>
+    <script src="./scrips/laboratorio.js"></script>
 <!--
 
 TemplateMo 569 Edu Meeting
@@ -69,7 +72,7 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
+                          <li><a href="/index.html" class="active">Inicio</a></li>
                           <li><a href="meetings.html">Nosotros</a></li>
                           <li class="scroll-to-section"><a href="#apply">Post</a></li>
                           <!-- <li class="has-sub">
@@ -80,7 +83,7 @@ https://templatemo.com/tm-569-edu-meeting
                               </ul>
                           </li> -->
                           <li class="scroll-to-section"><a href="#courses">Servicios</a></li> 
-                          <li class="scroll-to-section contact"><a href="#contact">Contactanos</a></li> 
+                          <li class=" contact"><a href="/index.html#contact">Contactanos</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -99,7 +102,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-12 text-about">
           <div class="d-flex">
             <input id="search-lab" type="text" class="form-control rounded-9" placeholder="Buscar">
-            <button class="btn btn-primary" id="search-btn">Buscar</button>
+            <button class="btn btn-primary" onclick="searchBtn()"id="search-btn">Buscar</button>
           </div>
           <p>
             En el Laboratorio de Análisis Génesis, ofrecemos servicios médicos de alta calidad y precisión, respaldados por profesionales altamente capacitados y tecnología avanzada.
@@ -112,71 +115,53 @@ https://templatemo.com/tm-569-edu-meeting
   <section class="meetings-page" id="meetings">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 content-specialist">
-          <button class="btn btn-primary btn-specialist" id="btn-1">Todos</button>
-          <button class="btn btn-primary btn-specialist-round" id="btn-1">Hematología</button>
-          <button class="btn btn-primary btn-specialist-round" id="btn-1">Química Sanguínea</button>
-          <button class="btn btn-primary btn-specialist-round" id="btn-1">Inmunología</button>
-          <button class="btn btn-primary btn-specialist-round" id="btn-1">Ver mas</button>
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Link 1</a></li>
-              <li><a class="dropdown-item" href="#">Link 2</a></li>
-              <li><a class="dropdown-item" href="#">Link 3</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Another link</a></li>
-            </ul>
+        <div class="col-lg-12 content-specialist" >
+          <a class="btn btn-primary btn-specialist" href="/laboratorio.html" id="btn-1">Todos</a>
+          <div id="list-btn-areas">
+            <a class="btn btn-primary btn-specialist-round" id="btn-1">Hematología</a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 content-specialist-tag">
           <h4>Nuestros Laboratorios</h4>
-          <a href="#" class="specialist-tag">
-            Hematología
-            <span class="badge bg-primary rounded-pill">14</span>
-          </a>
-          <a href="#" class="specialist-tag">
-            Hematología
-            <span class="badge bg-primary rounded-pill">14</span>
-          </a>
-          <a href="#" class="specialist-tag">
-            Hematología
-            <span class="badge bg-primary rounded-pill">14</span>
-          </a>
-          <a href="#" class="specialist-tag">
-            Hematología
-            <span class="badge bg-primary rounded-pill">14</span>
-          </a>
-          <a href="#" class="specialist-tag">
-            Hematología
-            <span class="badge bg-primary rounded-pill">14</span>
-          </a>
+          <div id="areas-list">
+            <a href="/laboratorio.html?area=Hematología" class="specialist-tag">
+              Hematología
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+          </div>
         </div>
         
-        <div class="col-lg-9">
+        <div class="col-lg-9" id="cards-from-labs">
+
           <div class="card-lab">
             <div class="card-lab-header">
-              <h6 class="card-lab-title">Nombre del laboratorio</h6>
+              <!-- alinear los elementos del div en columna -->
+              <div class="d-flex flex-column">
+                <h6 class="card-lab-title">Nombre del laboratorio</h6>
+                <h7 class="card-lab-title">Nombre del laboratorio</h7>
+              </div>
               <div>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Hematología</button>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Química Sanguínea</button>
+                <button class="btn btn-primary card-lab-btn" id="btn-1">Ver mas</button>
+                <button class="btn btn-primary card-lab-btn" id="btn-1">Enviar a whatsapp</button>
               </div>
             </div>
             <p class="card-lab-body">
               Este análisis evalúa los componentes de la sangre, como los glóbulos rojos, blancos y las plaquetas. Puede ayudar a detectar anemia, infecciones o problemas de coagulación.
             </p>
           </div>
+
+          
       </div>
     </div>
+
   </section>
 
     <div class="footer">
       <p>Copyright © 2023 Laboratorio Génesis. 
           <br>Desarrollado: <a href="#" target="_parent" title="free css templates">40 de fiebre</a></p>
+          <!-- Button trigger modal -->
     </div>
 
 
@@ -196,6 +181,53 @@ https://templatemo.com/tm-569-edu-meeting
 
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+    <script>
+      
+      //const dataLab = getLaboratoryRequests();
+      //addLaboratorio("GOTA GRUESA (PLASMODIUM, PALUDISMO, MALARIA)","No requiere ayuno","MICROSCOPIA","1 día","150","Sangre con EDTA")
+      
+      // first load
+      
+      let dataParam = getParamsFromHash();
+      if(dataParam.area){
+        getLaboratoryRequests((a)=>loadData(a.data, dataParam.area));
+      }else{
+        getLaboratoryRequests((a)=>loadData(a.data, null));
+      }
+
+      // getLaboratoryRequests((a)=>console.log(a.data));
+      
+
+      // load areas
+      getLaboratoryRequests((a)=>loadAreas(a.data));
+
+      // on change window.location.hash
+      window.onhashchange = function() {
+        let dataParam = getParamsFromHash();
+        if(dataParam.area){
+          getLaboratoryRequests((a)=>loadData(a.data, dataParam.area));
+        }else{
+          getLaboratoryRequests((a)=>loadData(a.data));
+        }
+      }
+      function searchBtn(){
+        getLaboratoryRequests((a)=>searchFromData(a.data));
+      }
+      // on search input
+      
+      $('#search-lab').on('input', function() {
+        // set hash to search
+        const searchLab = document.getElementById('search-lab');
+        const searchString = searchLab.value.toLowerCase();
+        if (searchString.length > 0) {
+          window.location.hash = "";
+        }
+        // window.location.hash = "search="+$(this).val();
+        searchBtn();
+      });
+      
+    </script>
+      
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
