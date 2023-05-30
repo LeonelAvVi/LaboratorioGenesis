@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
     <script src="./requests/laboratorio.js"></script>
     <script src="./scrips/laboratorio.js"></script>
+
 <!--
 
 TemplateMo 569 Edu Meeting
@@ -158,18 +159,39 @@ https://templatemo.com/tm-569-edu-meeting
 
   </section>
 
-    <div class="footer">
-      <p>Copyright © 2023 Laboratorio Génesis. 
-          <br>Desarrollado: <a href="#" target="_parent" title="free css templates">40 de fiebre</a></p>
-          <!-- Button trigger modal -->
-    </div>
+  <div class="footer">
+    <p>Copyright © 2023 Laboratorio Génesis. 
+        <br>Desarrollado: <a href="#" target="_parent" title="free css templates">40 de fiebre</a></p>
+        <!-- Button trigger modal -->
+  </div>
 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Laboratorio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input id="number-id-wha" type="text" class="form-control rounded-9" placeholder="Numero">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <div id="button-send">
+            <button type="button" class="btn btn-primary"
+              onclick="sendWhatsapp('Hola comoestas')"
+            >Save changes</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Button trigger modal -->
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/lightbox.js"></script>
@@ -178,9 +200,7 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/video.js"></script>
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
-
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <script>
       
       //const dataLab = getLaboratoryRequests();

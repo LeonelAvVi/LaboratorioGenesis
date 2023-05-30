@@ -6,8 +6,33 @@ function sendMensaje(data) {
     const numero = document.getElementById(data.idinput).value;
     const numeroCompleto = `591${numero}`;
     const numeroSinEspacios = numeroCompleto.replace(/\s/g, '');
-    const url = `https://api.whatsapp.com/send?phone=${numeroSinEspacios}&text=${encodeURIComponent(mensaje)}`;
+    const url = `https://api.whatsapp.com/send?phone=${numeroSinEspacios}&text=hola`;
     window.open(url, '_blank');
+}
+function sendWhatsapp(messaje){
+    const numero = document.getElementById('number-id-wha').value;
+    
+    const numeroCompleto = `591${numero}`;
+    const numeroSinEspacios = numeroCompleto.replace(/\s/g, '');
+
+    // mi mensaje tiene espaciosytildes como lo conviertoa url
+    const mensajeSinEspacios = messaje.replace(/\s/g, '%20');
+    const mensajeSinTildes = mensajeSinEspacios.replace(/á/g, '%C3%A1');
+    const mensajeSinTildes1 = mensajeSinTildes.replace(/é/g, '%C3%A9');
+    const mensajeSinTildes2 = mensajeSinTildes1.replace(/í/g, '%C3%AD');
+    const mensajeSinTildes3 = mensajeSinTildes2.replace(/ó/g, '%C3%B3');
+    const mensajeSinTildes4 = mensajeSinTildes3.replace(/ú/g, '%C3%BA');
+    const mensajeSinTildes5 = mensajeSinTildes4.replace(/ñ/g, '%C3%B1');
+    // const mensajeSinTildes6 = mensajeSinTildes5.replace(/./g, '%2E');
+    const mensajeSinTildes7 = mensajeSinTildes5.replace(/,/g, '%2C');
+    const mensajeSinTildes8 = mensajeSinTildes7.replace(/:/g, '%3A');
+    const mensajeSinTildes9 = mensajeSinTildes8.replace(/;/g, '%3B');
+    const mensajeSinTildes10 = mensajeSinTildes9.replace(/◉/g, '%E2%97%89');
+    //codigo ascii de la salto de linea %0A
+
+    const url = `https://api.whatsapp.com/send?phone=${numeroSinEspacios}&text=${mensajeSinTildes10}`;
+    window.open(url, '_blank');
+
 }
 
 function getParamsFromHash() {
@@ -25,7 +50,15 @@ function getParamsFromHash() {
     };
     return dataParams;
 }
-
+const loadModal = (title, mensaje) =>{
+    const titleModal = document.getElementById('exampleModalLabel');
+    titleModal.innerHTML = title;
+    const divButtonSend = document.getElementById('button-send');
+    divButtonSend.innerHTML ='';
+    divButtonSend.innerHTML = `<button type="button" class="btn btn-primary"
+    onclick="sendWhatsapp('${mensaje}')"
+  >Enviar a Whatsapp</button>`;
+}
 function searchFromData(data){
     const searchLab = document.getElementById('search-lab');
     
@@ -43,69 +76,44 @@ function searchFromData(data){
     }
     );*/
 
+
     const displayData = (data) => {
         const htmlString = data
             .map((item, index) => {
-                const mensaje = `Prueba de laboratorio: ${item.prueba_laboratorio}.. aboratorio: ${item.area}.. Condiciones del paciente: ${item.Condiciones_paciente}.. Dias: ${item.dias}.. Precio: ${item.precio}..Muestra: ${item.muestra}`;
-                const idInput = `number-id-wha${index}`;
-                const data= {
-                    mensaje: mensaje,
-                    idInput: idInput
-                }
-                // data to string
-                const dataString = JSON.stringify(data);
+                const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Días:* ${item.dias}%0A ⮞ *Precio Bs:* ${item.precio}%0A ⮞ *Muestra:* ${item.muestra}`;
                 return `
                 <div class="card-lab">
-                <div class="card-lab-header">
-                  <!-- alinear los elementos del div en columna -->
-                  <div class="d-flex flex-column">
-                    <h6 class="card-lab-title">${item.prueba_laboratorio}</h6>
-                    <h7 class="card-lab-title">${item.area}</h7>
-                  </div>
-                  <div>
-                    <button class="btn btn-primary card-lab-btn" id="btn-1">Ver mas</button>
-                    <button type="button" class="btn btn-primary card-lab-btn" data-bs-toggle="modal" data-bs-target="#exampleModalA${index}">
-                    Enviar a whatsapp
-                    </button>
-                  </div>
-                </div>
-                <p class="card-lab-body">
-                    Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
-                    ${item.dias}<br/>
-                    El precio es: ${item.precio} <br/>
-                    Muestra: ${item.muestra} 
-                </p>                
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalA${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Introduzca su numero</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <input id="${idInput}" type="text" class="form-control rounded-9" placeholder="Numero">
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            OnClick="sendMensaje('${dataString}')"
-                        >
-                            enviar mensaje
-                        </button>
-                      </div>
+                    <div class="card-lab-header">
+                        <!-- alinear los elementos del div en columna -->
+                        <div class="d-flex flex-column">
+                            <h6 class="card-lab-title">${item.prueba_laboratorio}</h6>
+                            <h7 class="card-lab-title">${item.area}</h7>
+                        </div>
+                        <div>
+                            <button 
+                                type="button" 
+                                class="btn btn-primary card-lab-btn" 
+                                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                onclick="loadModal('${item.prueba_laboratorio}','${mensaje}')"
+                            >
+                            Enviar a whatsapp
+                            </button>
+                        </div>
                     </div>
-                  </div>
+                    <p class="card-lab-body">
+                        Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
+                        ${item.dias}<br/>
+                        El precio es: ${item.precio} <br/>
+                        Muestra: ${item.muestra} 
+                    </p>                                
                 </div>
-                
-              </div>
             `;
             })
             .join('');
         searchResultList.innerHTML = htmlString;
     }
+
+
 
     
 
@@ -144,6 +152,7 @@ function loadData(data, area){
     const cardsFromLabs = document.getElementById('cards-from-labs');
     const htmlString = filtereddata
         .map((item) => {
+            const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Días:* ${item.dias}%0A ⮞ *Precio Bs:* ${item.precio}%0A ⮞ *Muestra:* ${item.muestra}`;
             return `
             <div class="card-lab">
             <div class="card-lab-header">
@@ -153,8 +162,14 @@ function loadData(data, area){
                 <h7 class="card-lab-title">${item.area}</h7>
               </div>
               <div>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Ver mas</button>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Enviar a whatsapp</button>
+                <button 
+                    type="button" 
+                    class="btn btn-primary card-lab-btn" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="loadModal('${item.prueba_laboratorio}','${mensaje}')"
+                >
+                Enviar a whatsapp
+                </button>
               </div>
             </div>
             <p class="card-lab-body">
