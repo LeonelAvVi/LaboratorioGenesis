@@ -34,7 +34,7 @@ font & reset css
 reset
 --------------------------------------------- 
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, h7, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
 figure, header, nav, section, article, aside, footer, figcaption {
@@ -98,7 +98,7 @@ a:hover {
 	color: #FC3;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h7 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -1745,6 +1745,12 @@ card laboratorio
 .card-lab .card-lab-header h6{
   color: #fff;
   font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-lab .card-lab-header h7{
+  color: #fff;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
