@@ -258,10 +258,18 @@ header
   color: #1e1e1e!important;
 }
 
+.background-header .main-nav .nav .active{
+  color: #fb5849!important;
+}
+#btn-nav-contact{
+  color: #fff!important;
+}
+
 .background-header .logo,
 .background-header .main-nav .nav li a {
   color: #1e1e1e!important;
 }
+
 
 .background-header .main-nav .nav li:hover a {
   color: #fb5849!important;
@@ -904,7 +912,17 @@ section.upcoming-meetings {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 230px;
+  padding-top: 220px;
+  padding-bottom: 110px;
+}
+
+section.qa-section {
+  background-image: url(../img/about.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 220px;
   padding-bottom: 110px;
 }
 
@@ -1350,6 +1368,7 @@ section.mision-vision {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 140px 0px 125px 0px;
+
 }
 section.mision-vision h2 {
   font-size: 38px;
@@ -2081,18 +2100,38 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 /* end of updating 2023 */
+.qa img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 @media (max-width: 992px) {
 	.templatemo-item-col {
 		width: 45%;
 	}
+  .qa img{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+  }
+  .qa .col-sm-4{
+    width: 30%;
+  }
 }
 
 @media (max-width: 767px) {
 	.templatemo-item-col {
 		width: 100%;
 	}
+}
+
+.main-banner .caption h1 {
+  font-size: 40px !important;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* 
@@ -2163,8 +2202,59 @@ responsive
 
 @media (max-width: 992px) {
 
+  .our-facts h2{
+    text-align: center;
+  }
+
+  #bg-video {
+    min-height: 60vh;
+  }
+  section.mision-vision img{
+    margin-top: 28px;
+    margin-bottom: 28px;
+      width: 56%;
+  }
+  .grid-team{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  section.mision-vision .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  section.upcoming-meetings .categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  section.upcoming-meetings .categories img {
+    width: 60%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+
+  }
+  section.qa-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  section.qa-section h2 {
+    font-size: 28px;
+    text-align: center !important;
+  }
+
   .main-banner .caption {
-    top: 60%;
+    width: 85%;
+    top: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .main-banner .caption h2 {
@@ -2172,6 +2262,7 @@ responsive
     margin-bottom: 10px;
     font-size: 22px;
   }
+
 
   .main-banner .caption .main-button-red {
     margin-top: 15px;
@@ -2210,6 +2301,42 @@ responsive
 }
 
 @media (max-width: 767px) {
+
+  .card-team .body-card h3{
+    font-size: 16px;
+  }
+  .card-team .body-card .cargo{
+    font-size: 14px;
+  }
+
+  .card-team .body-card .description{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  section.upcoming-meetings .categories img {
+    width: 80%;
+  }
+
+  section.meetings-page .content-about p {
+    /* padding: 0 15px; */
+    font-size: 16px;
+  }
+  .main-banner .caption {
+    width: 92%;
+    top: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-banner .caption h2 {
+    width: 90%;
+  }
+
+  #bg-video {
+    min-height: 80vh;
+  }
 
   .sub-header .left-content p {
     display: none;
