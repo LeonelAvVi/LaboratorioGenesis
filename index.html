@@ -62,14 +62,14 @@ https://templatemo.com/tm-569-edu-meeting
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="index.html" class="logo">
-                        <img src="assets/img/logo.png" alt="logo" class="img-logo">
+                        <img src="assets/img/logo.png" alt="logo" class="img-logo active">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
-                          <li><a href="meetings.html">Nosotros</a></li>
-                          <li class="scroll-to-section"><a href="#apply">Post</a></li>
+                          <li><a href="about.html">Nosotros</a></li>
+                          <li class=""><a href="blog.html">Post</a></li>
                           <!-- <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
@@ -102,11 +102,12 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="row">
               <div class="col-lg-12">
                 <div class="caption">
-                  <h6>Bienvenidos a <span> Laboratorio Génesis</span></h6>
+                  <h6>Bienvenidos a</h6>
+                   <h1> Laboratorio Génesis</h1>
                   <h2>La precisión y calidad que tu salud merece.</h2>
                   <p>Somos un laboratorio de análisis clínicos especializado en una amplia gama de servicios de alta calidad para cuidar de tu salud y la de tu familia.</p>
                   <div class="main-button-red">
-                      <div class="scroll-to-section"><a href="#contact">Contactanos</a></div>
+                      <div class=""><a href="laboratorio.html">Nuestros Servicios</a></div>
                   </div>
                 </div>
               </div>
@@ -699,29 +700,27 @@ https://templatemo.com/tm-569-edu-meeting
     </div>
   </section>
 
-  <section class="upcoming-meetings" id="meetings">
+  <section class="qa-section" id="meetings">
     <div class="container">
       <div class="row">
     
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Control de Calidad</h2>
+            <h2 class="text-lg-start text-sm-center text-start">Control de Calidad</h2>
           </div>
         </div>
 
         <div class="col-lg-12">
-          <div class="row justify-content-center align-items-ce ter">
-            
-
-            <div class="col-lg-3">
-              <img src="assets/img/qa/image1.png" alt="">
+          <div class="row justify-content-center align-items-center qa">
+            <div class="col-lg-3 col-sm-4">
+              <img src="assets/img/qa/image1.png" alt="...">
             </div>
             
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-4">
               <img src="assets/img/qa/image2.png" alt="">
             </div>
             
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-4">
               <img src="assets/img/qa/image3.png" alt="">
             </div>
           
@@ -809,7 +808,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <form id="contact" action="" method="post">
+              <div id="contact">
                 <div class="row">
                   <div class="col-lg-12">
                     <h2>Contactanos</h2>
@@ -826,7 +825,7 @@ https://templatemo.com/tm-569-edu-meeting
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="age" type="text" id="number" placeholder="Edad" required="">
+                      <input name="age" type="text" id="age" placeholder="Edad" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
@@ -836,11 +835,11 @@ https://templatemo.com/tm-569-edu-meeting
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">Enviar Mensaje</button>
+                      <button id="btn-send-contact" class="button">Enviar Mensaje</button>
                     </fieldset>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -891,51 +890,24 @@ https://templatemo.com/tm-569-edu-meeting
     <script src="assets/js/custom.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
+      document.getElementById('btn-send-contact').addEventListener('click', function(){
+        let nombre = document.getElementById('name').value;
+        let numero = document.getElementById('number').value;
+        let edad = document.getElementById('age').value;
+        let mensaje = document.getElementById('message').value;
 
-        //according to loftblog tut
-        $('.nav li:first').addClass('active');
+        var nombreApellido = nombre.split(" ").map(function (word) {
+          return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }).toLocaleString();
 
-        var showSection = function showSection(section, isAnimate) {
-          var
-          direction = section.replace(/#/, ''),
-          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-          reqSectionPos = reqSection.offset().top - 0;
+        var mensajesend = mensaje.split(" ").map(function (word) {
+          return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }).toLocaleString();
+        let url = 'https://api.whatsapp.com/send?phone=59175413873&text=Nombre: '+nombreApellido+'%0ANumero: '+numero+'%0AEdad: '+edad+'%0AMensaje: '+mensaje;
 
-          if (isAnimate) {
-            $('body, html').animate({
-              scrollTop: reqSectionPos },
-            800);
-          } else {
-            $('body, html').scrollTop(reqSectionPos);
-          }
+        window.open(url, '_blank');
 
-        };
-
-        var checkSection = function checkSection() {
-          $('.section').each(function () {
-            var
-            $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-              var
-              currentId = $this.data('section'),
-              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-              reqLink.closest('li').addClass('active').
-              siblings().removeClass('active');
-            }
-          });
-        };
-
-        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-          e.preventDefault();
-          showSection($(this).attr('href'), true);
-        });
-
-        $(window).scroll(function () {
-          checkSection();
-        });
+      });
     </script>
 </body>
 
