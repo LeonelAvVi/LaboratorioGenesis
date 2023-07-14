@@ -1,3 +1,14 @@
+function openModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
+
 //http://127.0.0.1:5500/laboratorio.html?lab=HEMOGRAMA%20AUTOMATIZADO&area=HEMATOLOGIA
 function sendMensaje(data) {
     console.log(data);
