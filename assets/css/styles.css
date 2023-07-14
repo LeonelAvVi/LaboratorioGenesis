@@ -44,6 +44,66 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+.btn-cerrar{
+  padding: 10px 20px;
+  background-color: #a12c2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100px;
+  align-self: center;
+}
+
+.modal-content h3{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #a12c2f;
+}
+.modal-content   ul {
+  padding-top: 24px;
+  padding-left: 20px;
+}
+
+.modal-content  li {
+  list-style-type: disc !important;
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Estilos del botón */
+.btn-curriculum {
+  padding: 10px 20px;
+  background-color: #a12c2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  align-self: flex-end;
+}
+
+
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1889,7 +1949,7 @@ section.meetings-page .content-about p{
   font-size: 15px;
   color: #303030;
   text-align: center;
-  margin-bottom: 33px;
+  margin-bottom: 12px;
 }
 section.meetings-page .content-about .qa{
   justify-content: center;
