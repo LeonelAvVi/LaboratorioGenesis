@@ -2,7 +2,7 @@
 function getLaboratoryRequests(callback) {
     const options = {method: 'GET'};
 
-    return fetch('https://api.laboratoriogenesis.com.bo/apis/laboratorio.php', options)
+    return fetch('https://laboratoriogenesis.com.bo/backend/api/laboratorio.php', options)
     .then(response => response.json())
     .then(response => {
         callback(response);
