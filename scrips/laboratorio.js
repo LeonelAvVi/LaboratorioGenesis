@@ -91,7 +91,7 @@ function searchFromData(data){
     const displayData = (data) => {
         const htmlString = data
             .map((item, index) => {
-                const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Días:* ${item.dias}%0A ⮞ *Precio Bs:* ${item.precio}%0A ⮞ *Muestra:* ${item.muestra}`;
+                const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Muestra:* ${item.muestra}`;
                 return `
                 <div class="card-lab">
                     <div class="card-lab-header">
@@ -163,7 +163,7 @@ function loadData(data, area){
     const cardsFromLabs = document.getElementById('cards-from-labs');
     const htmlString = filtereddata
         .map((item) => {
-            const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Días:* ${item.dias}%0A ⮞ *Precio Bs:* ${item.precio}%0A ⮞ *Muestra:* ${item.muestra}`;
+            const mensaje = `*LABORATORIO GENESIS* %0A Indicaciones al Paciente %0A ⮞ *Prueba de laboratorio:* ${item.prueba_laboratorio}%0A ⮞ *Tipo de laboratorio:* ${item.area}%0A ⮞ *Condiciones del paciente:* ${item.Condiciones_paciente}%0A ⮞ *Muestra:* ${item.muestra}`;
             return `
             <div class="card-lab">
             <div class="card-lab-header">
