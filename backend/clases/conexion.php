@@ -62,14 +62,14 @@
             return $this->connection;
         }*/
         public function dbConection(){
-            $dbname = "labgenesis";
+            $dbname = "labogene_labgenesis";
             $dns = "mysql:host=localhost;dbname=$dbname";
             
             //$user= "notarteb_user";
             //$password="notarte-bolivia33";
 
-            $user= "genesi_lab-genesis";
-            $password="laboratoriogenesis";
+            $user= "labogene_genesis";
+            $password="labGenesis99";
             
             
             try {
