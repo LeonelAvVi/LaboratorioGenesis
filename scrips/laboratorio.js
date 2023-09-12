@@ -113,8 +113,8 @@ function searchFromData(data){
                     </div>
                     <p class="card-lab-body">
                         Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
-                        ${item.dias}<br/>
-                        El precio es: ${item.precio} <br/>
+                        
+                        
                         Muestra: ${item.muestra} 
                     </p>                                
                 </div>
@@ -124,7 +124,7 @@ function searchFromData(data){
         searchResultList.innerHTML = htmlString;
     }
 
-
+//El precio es: ${item.precio} <br/> ${item.dias}<br/>
 
     
 
@@ -185,8 +185,8 @@ function loadData(data, area){
             </div>
             <p class="card-lab-body">
                 Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
-                ${item.dias}<br/>
-                El precio es: ${item.precio} <br/>
+                
+               
                 Muestra: ${item.muestra} 
             </p>
             
@@ -196,7 +196,7 @@ function loadData(data, area){
         .join('');
     cardsFromLabs.innerHTML = htmlString;
 }
-
+// El precio es: ${item.precio} <br/>${item.dias}<br/>
 function loadAreas(data){
     const areassinRepetirMasCantidadRepetidos = data.map((item) => item.area).reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
     const areassinRepetirMasCantidad = [...areassinRepetirMasCantidadRepetidos].map(([area, cantidad]) => ({ area, cantidad }));
