@@ -112,10 +112,7 @@ function searchFromData(data){
                         </div>
                     </div>
                     <p class="card-lab-body">
-                        Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
-                        
-                        
-                        
+                        ${item.Condiciones_paciente} <br/>
                     </p>                                
                 </div>
             `;
@@ -184,7 +181,7 @@ function loadData(data, area){
               </div>
             </div>
             <p class="card-lab-body">
-                Las condiciones del paciente son: ${item.Condiciones_paciente} <br/>
+                ${item.Condiciones_paciente} <br/>
             </p>
             
           </div>
