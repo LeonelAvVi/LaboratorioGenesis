@@ -54,7 +54,11 @@ figure, header, nav, section, article, aside, footer, figcaption {
   width: 100px;
   align-self: center;
 }
-
+.certificate img{
+  margin: 0px 16px !important;
+  padding: 16px;
+  border-bottom: 4px solid #a12c2f;
+}
 .modal-content h3{
   font-size: 24px;
   font-weight: 600;
@@ -81,14 +85,44 @@ figure, header, nav, section, article, aside, footer, figcaption {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+  transition: ease-in-out 5s;
+}
+
+.modal img{
+  width: 50%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin: 7% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.modal-content .body-modal-certificate{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-content .body-modal-certificate img{
+  width: 40%;
+}
+.modal-content .body-modal-certificate p{
+  width: 40%;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: justify;
+  padding: 20px;
 }
 
 /* Estilos del botón */
@@ -1955,15 +1989,72 @@ section.meetings-page .content-about p{
   margin-bottom: 12px;
 }
 section.meetings-page .content-about .qa{
-  justify-content: center;
-  align-items: center;
+  background-color: #1E1E1E;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 section.meetings-page .content-about .qa img{
   /* width: 30%; */
   margin-bottom: 30px;
 }
+.qa-index{
+  /* background-color: #1E1E1E; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.certificate{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 20%;
+}
+.certificate img{
+  width: 100%;
+  border-radius: 20px;
+}
 
+.certificate button{
+  background-color: #ffffff00;
+  border-color: #AE2F32;
+  color: #AE2F32;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all .3s;
+
+}
+
+.certificate button.enfasis{
+  background-color: #AE2F32;
+  border-color: #AE2F32;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all .3s;
+
+}
+
+.certificate button:hover{
+  background-color: #EAB550;
+  border-color: #EAB550;
+  color: #1E1E1E;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all .3s;
+}
 
 section.meetings-page .filters li {
   font-size: 13px;
@@ -2162,6 +2253,8 @@ section.meetings-page .pagination ul li a:hover {
   padding-right: 20px;
 }
 
+
+
 /* end of updating 2023 */
 .qa img{
   width: 100%;
@@ -2169,19 +2262,46 @@ section.meetings-page .pagination ul li a:hover {
   object-fit: cover;
 }
 
+.qa-index.certificate :nth-child(1){
+  order: 1;
+}
+.qa-index.certificate :nth-child(2){
+  order: 2;
+}
+.qa-index.certificate :nth-child(3){
+  order: 3;
+}
+.qa-index.certificate :nth-child(4){
+  order: 4;
+}
 
 @media (max-width: 992px) {
 	.templatemo-item-col {
 		width: 45%;
 	}
   .qa img{
-    width: 100px;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
   .qa .col-sm-4{
     width: 30%;
   }
+  .modal-content .body-modal-certificate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content .body-modal-certificate img {
+    width: 90%;
+  }
+
+  .modal-content .body-modal-certificate p {
+    width: 90%;
+  }
+
+
 }
 
 @media (max-width: 767px) {
@@ -2359,6 +2479,23 @@ responsive
 
   section.contact-us #contact {
     margin-bottom: 30px;
+  }
+  .certificate{
+    width: 50%;
+  }
+
+  
+  .qa-index.certificate :nth-child(1){
+    order: 2;
+  }
+  .qa-index.certificate :nth-child(2){
+    order: 1;
+  }
+  .qa-index.certificate :nth-child(3){
+    order: 3;
+  }
+  .qa-index.certificate :nth-child(4){
+    order: 4;
   }
 
 }

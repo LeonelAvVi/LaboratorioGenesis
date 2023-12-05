@@ -2,39 +2,85 @@
 <html lang="en">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-
-    
     <link rel="shortcut icon" href="/assets/icon.ico" />
     <meta name="author" content="40 de fiebre">
     <title>Laboratorio Génesis | Análisis Clínico de Calidad en Sucre</title>
-
     <meta name="description" content="Laboratorio Génesis es uno de los mejores laboratorios de Bolivia, acreditado por controles de calidad nacionales e internacionales. Ofrece análisis clínicos en diferentes áreas, como hematología, inmunología, hormonas, microbiología, parasitología y toxicología. Cuenta con un equipo de profesionales especializados y modernos equipos e infraestructura. Atiende emergencias las 24 horas.">
-
     <meta name="keywords" content="laboratorio, análisis clínico, hematología, inmunología, hormonas, microbiología, parasitología, toxicología, Sucre, Bolivia">
-    <!-- Bootstrap core CSS -->
-
-
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
--->
   </head>
 
 <body>
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="body-modal-certificate">
+          <img src="assets/img/qa/riqas_monthly.webp" alt="certificate 3">
+          <p>
+            <b>
+              INLASA.- ( Instituto Nacional de Laboratorios de Salud )
+            </b></br>
+            El laboratorio de Análisis Clínico Génesis S.R.L.  participa del PEEC (Programa de Evaluación Externa de la Calidad) de este Laboratorio de Referencia Nacional.
+          </p>
+        </div>
+        <button class="btn-cerrar" onclick="closeModal()">Volver</button>
+      </div>
+    </div>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <div class="body-modal-certificate">
+          <img src="assets/img/qa/certificate_pncq.webp" alt="certificate 3">
+          <p>
+            <b>
+              PNCQ.- (Programa Nacional de Control de Calidad) del Brasil.
+            </b></br>
+            Con participación de más de 6200 laboratorios en el mundo.
+            El Laboratorio de Análisis Clínico Génesis participa de este programa desde el 2005 con un desempeño <B>“EXCELENTE”</B> en todas las áreas del Laboratorio.
+
+          </p>
+        </div>
+
+        <button class="btn-cerrar" onclick="closeModal()">Volver</button>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <div class="body-modal-certificate">
+          <img src="assets/img/qa/IFCCB.webp" alt="certificate 3">
+          <p>
+            <b>
+              IFCC.- Federación Internacional de Química Clínica y Medicina de Laboratorio.
+            </b></br>
+            El Laboratorio de Análisis Clínico Génesis fue seleccionado para participar en un plan piloto junto con 10 laboratorios de Bolivia, único en Chuquisaca (Sucre), organización con sede en Vancouver-Canadá. 
+            Máxima organización mundial de Laboratorios de Diagnóstico Clínico
+          </p>
+        </div>
+        <button class="btn-cerrar" onclick="closeModal()">Volver</button>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <div class="body-modal-certificate">
+          <img src="assets/img/qa/monthly_haematology.webp" alt="certificate 3">
+          <p>
+            <b>
+              CENETROP.- (Centro Nacional de Enfermedades Tropicales)
+            </b></br>
+             El laboratorio de Análisis Clínico Génesis S.R.L.  participa del PEEC (Programa de Evaluación Externa de la Calidad) de este Laboratorio de Referencia Nacional.
+          </p>
+        </div>
+        <button class="btn-cerrar" onclick="closeModal()">Volver</button>
+      </div>
+    </div>
 
   <!-- Sub Header -->
   <div class="sub-header">
@@ -48,10 +94,9 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.facebook.com/LaboratorioGenesisSRL"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/laboratorio_genesis_srl/"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=59171164771&text=Hola,%20quisiera%20hacer%20una%20consulta"><i class="fa fa-whatsapp"></i></a></li>
             </ul>
           </div>
         </div>
@@ -82,7 +127,7 @@ https://templatemo.com/tm-569-edu-meeting
                                   <li><a href="meeting-details.html">Meeting Details</a></li>
                               </ul>
                           </li> -->
-                          <li><a href="/laboratorio.html">Servicios</a></li> 
+                          <li><a href="/laboratorio.html">Análisis</a></li> 
                           <li class="scroll-to-section contact"><a href="#contact">Contactanos</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
@@ -720,21 +765,33 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
 
         <div class="col-lg-12">
-          <div class="row justify-content-center align-items-center qa">
-            <div class="col-lg-3 col-sm-4">
-              <img src="assets/img/qa/image1.png" alt="...">
+          <div class="row qa qa-index">
+            <div class="col-lg-2 certificate">
+              <img src="assets/img/qa/image1.png" alt="certificate 1">
+              <button type="button" id="modal1" onclick="openModal(1)">
+                Ver información
+              </button>
             </div>
             
-            <div class="col-lg-3 col-sm-4">
-              <img src="assets/img/qa/image2.png" alt="">
+            <div class="col-lg-2 certificate">
+              <img src="assets/img/qa/image2.png" alt="certificate 2">
+              <button type="button" class="enfasis" id="modal2" onclick="openModal(2)">
+                Ver información
+              </button>
             </div>
-            
-            <div class="col-lg-3 col-sm-4">
-              <img src="assets/img/qa/image3.png" alt="">
+          
+            <div class="col-lg-2 certificate">
+              <img src="assets/img/qa/ifcc-logo.webp" alt="certificate 3">
+              <button type="button" class="enfasis" id="modal3" onclick="openModal(3)">
+                Ver información
+              </button>
             </div>
-
-            <div class="col-lg-3 col-sm-4">
-              <img src="assets/img/qa/IFCCB.webp" alt="">
+          
+            <div class="col-lg-2 certificate">
+              <img src="assets/img/qa/image3.png" alt="certificate 4">
+              <button type="button" id="modal4" onclick="openModal(4)">
+                Ver información
+              </button>
             </div>
           
           </div>
@@ -922,6 +979,25 @@ https://templatemo.com/tm-569-edu-meeting
 
       });
     </script>
+    <script>
+
+      function openModal(number) {
+        var modal = document.getElementById('modal'+number);
+        modal.style.display = 'block';
+      }
+
+      // Función para cerrar el modal
+      function closeModal() {
+        var modal = document.getElementById('modal1');
+        modal.style.display = 'none';
+        var modal = document.getElementById('modal2');
+        modal.style.display = 'none';
+        var modal = document.getElementById('modal3');
+        modal.style.display = 'none';
+        var modal = document.getElementById('modal4');
+        modal.style.display = 'none';
+      }
+  </script>
 </body>
 
 </body>
