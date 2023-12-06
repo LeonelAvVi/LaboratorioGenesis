@@ -144,22 +144,9 @@ https://templatemo.com/tm-569-edu-meeting
         
         <div class="col-lg-12" id="cards-from-labs">
 
-          <div class="card-lab">
-            <div class="card-lab-header">
-              <!-- alinear los elementos del div en columna -->
-              <div class="d-flex flex-column">
-                <h6 class="card-lab-title">Nombre del laboratorio</h6>
-                <h7 class="card-lab-title">Nombre del laboratorio</h7>
-              </div>
-              <div>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Ver mas</button>
-                <button class="btn btn-primary card-lab-btn" id="btn-1">Enviar a whatsapp</button>
-              </div>
-            </div>
-            <p class="card-lab-body">
-              Este análisis evalúa los componentes de la sangre, como los glóbulos rojos, blancos y las plaquetas. Puede ayudar a detectar anemia, infecciones o problemas de coagulación.
-            </p>
-          </div>
+          <p class="text-center" style="font-size: 20px;">
+            Aquí se mostraran los resultados de la búsqueda, debe ingresar el nombre de un análisis en el buscador.
+          </p>
 
           
       </div>
@@ -217,12 +204,12 @@ https://templatemo.com/tm-569-edu-meeting
       
       // first load
       
-      let dataParam = getParamsFromHash();
-      if(dataParam.area){
-        getLaboratoryRequests((a)=>loadData(a.data, dataParam.area));
-      }else{
-        getLaboratoryRequests((a)=>loadData(a.data, null));
-      }
+      // let dataParam = getParamsFromHash();
+      // if(dataParam.area){
+      //   getLaboratoryRequests((a)=>loadData(a.data, dataParam.area));
+      // }else{
+      //   getLaboratoryRequests((a)=>loadData(a.data, null));
+      // }
 
       // getLaboratoryRequests((a)=>console.log(a.data));
       
